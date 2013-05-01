@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+<script src="http://debug.phonegap.com/target/target-script-min.js#Pumpkin"></script>
+    <meta content="text/html; charset=windows-1252"
+      http-equiv="Content-Type">
+    <title>Erdpyramiden near me</title>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript">
+function getDistance(var lat1, var lat2, var long1, var long2){
+var R = 6371;
+var dLat = (lat2-lat1).toRad();
+var dLon = (long2 -long1).toRad();
+var latA = lat1.toRad();
+var latB = lat2.toRad();
+
+var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(latA) * Math.cos(latB); 
+var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+return R * c;
+}
+var EPLats = new Array();
+var EPLongs = new Array();
+var EPNames = new Array();
+var Distances = new Array();
+EPLats[0] = 46.905556;
+EPLongs[0] = 11.918611;
+EPNames[0] = 'Terenten, Italy';
+var SmallestIndex;
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+    }
+function onSuccess(position) {
+for(var loop = 0; loop<EPLats.length; loop++){
+Distances[loop] = getDistance(position.coords.latitude, EPLats[loop], position.coords.longitude, EPLongs[loop]);
+}
+var SmallestValue = Distances[0];
+SmallestIndex = 0;
+for(var loop2 = 0; loop2 < Distances.length; loop2++){
+if(Distances[loop2] < SmallestValue){
+SmallestValue = Distances[loop2];
+SmallestIndex = loop2;
+}
+}
+var Readout = document.getElementById('readout');
+Readout.innerHTML = 'The nearest erdpyramiden are at '+EPNames[SmallestValue]+'.';
+}
+</script>
+  </head>
+  <body>
+    <p id="readout">Getting data...<br>
+      Please wait. </p>
+  </body>
+</html>

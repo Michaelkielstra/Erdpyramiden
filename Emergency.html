@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta content="text/html; charset=windows-1252"
+      http-equiv="Content-Type">
+    <title>Gallery</title>
+    <style type="text/css">img{ height:100%; width:auto;}
+	div{white-space:nowrap;}
+  </style>
+    <script type="text/javascript">
+var direction = 1;
+function pageScroll() {
+if(window.pageXOffset == 0){ direction = 1}
+if(window.pageXOffset == window.scrollMaxX){ direction = -1}
+    	window.scrollBy(50*direction,0); // horizontal and vertical scroll increments
+    	scrolldelay = setTimeout('pageScroll()',100); // scrolls every 100 milliseconds
+}</script>
+  </head>
+  <body style="width:100%;height:100%;" onload="pageScroll()">
+    <div id="dhtmlgoodies_marquee"><img alt="" src="1.png"><img alt=""
+        src="2.png"><img alt="" src="3.png"><img alt="" src="4.png"><img
+        alt="" src="5.png"></div>
+  </body>
+</html>
