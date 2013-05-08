@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <title>Walks with erdpyramiden</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+function myFunction(){
+var selection;
+selection = document.getElementById("select").value;
+switch(selection){
+case "ter":
+document.getElementById('readout').innerHTML = "A hiking trail starts at the centre of the village, taking you directly to the earth pyramids in a 40-minutes walk. Sorry for brief directions.";
+break;
+case "mon":
+document.getElementById('readout').innerHTML = "From Soprabolzano/Oberbozen, follow Red Trail No. 35 for a section of the town, or follow signs that say 'Freudpromenade', as far as the train crossing and then turn left to Lichtenstern (1,279 m), where you can get a bite to eat at the Lichtenstern Hotel (closed Tuesdays) or at the Südtirolerhof Hotel (closed Wednesdays). Continue on Trail No. 35 until Trail No. 28 branches off towards Kematen (1,322 m; 1 hour from Soprabolzano; food and drink available; closed Mondays). Be sure to stop by to see the Gothic chapel in Kematen. From Kematen, follow Trail No. 29 to the Maria Saal pilgrimage church (1,174 m). The sanctuary has a fresco worth seeing entitled Madonna with an Umbrella. Food and drinks are available at the inn next door (closed Fridays) or 5 minutes further, at the Gasthaus Egarter inn (closed Mondays); about 1 hour from Kematen. For the return, take the path to the earth pyramids, Trail No. 24, to Collalbo/Klobenstein (1 hour). From Collalbo, return to Renon using the narrow-gauge railway o Sobrabolzano, or walk on Trail No. 35, which takes about 80 minutes.";
+break;
+case "ste":
+document.getElementById('readout').innerHTML = "From above the village a partly narrow and a bit steep path goes to the Katzenbach gorge, through the Lahnen track, to the Dosser cross and finally to the unique earth pyramids. For the way back you follow the marking no. 2 to Steinegg. Altogether the well signposted pyramid round is circa 4.5 kilometers long and takes about three hours.";
+break;
+}
+}
+</script>
+    <p id="readout"> There are three erdpyramiden walks available.&nbsp;
+      Please select one.</p>
+<form action="" method="post">
+    <select id="select" onChange='myFunction();'>
+      <option>Select one</option>
+      <option value="ter">Terento</option>
+      <option value="mon">Monte di mezzo</option>
+      <option value="ste">Steinegg</option>
+    </select></form>
+  </body>
+</html>
