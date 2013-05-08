@@ -16,5 +16,6 @@
     <author email="michaelandwormykielstra@f2s.com">
         Michael Kielstra 
     </author>
+<icon src="icon.png" />
 
 </widget>
